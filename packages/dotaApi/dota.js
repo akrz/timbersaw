@@ -15,7 +15,7 @@ Dota.getMatch = function() {
     );
 
     if (matchResponse.statusCode === 200) {
-        return matchResponse.data.result.duration
+        return matchResponse.data.result
     }
     else {
         throw new Meteor.Error(500, "getMatch failed with error: "+matchResponse.statusCode);
