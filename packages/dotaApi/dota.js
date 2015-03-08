@@ -23,7 +23,7 @@ Dota.getMatch = function() {
 }
 
 Meteor.methods({
-  'getMatch': function(){
-    return Dota.getMatch();
-  }
+    'getMatch': function(){
+        return Dota.getMatch();
+    }
 })
