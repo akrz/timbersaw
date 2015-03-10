@@ -1,0 +1,31 @@
+body {
+    height:100%;
+    background-color: green;
+}
+
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    font-family: 'Cabin', sans-serif;
+    color: white;
+    font-size: 80px;
+}
+
+.win {
+    background-color: green;
+}
+
+.lose {
+    background-color: red;
+}
+
+/* Mobile */
+@media screen and (max-width: 889px) , screen and (max-height: 300px) {
+
+    .result {
+        font-size: 3em;
+    }
+}

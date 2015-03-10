@@ -1,8 +1,7 @@
 Dota = {};
 
-Dota.getMatch = function() {
-    if (!Meteor.settings.steamToken)
-        throw new Meteor.Error(500, 'Enter a valid Steam Token in Meteor.settings');
+Dota.GetMatchDetails = function() {
+    checkToken();
 
     var matchResponse = Meteor.http.get(
         "https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?",
@@ -14,10 +13,26 @@ Dota.getMatch = function() {
         }
     );
 
-    if (matchResponse.statusCode === 200) {
-        return matchResponse.data.result
+    return returnResponse(matchResponse);
+};
+
+Dota.GetLastMatch = function(account_id) {
+    checkToken();
+
+
+}
+
+function checkToken() {
+    if (!Meteor.settings.steamToken) {
+        throw new Meteor.Error(500, 'Enter a valid Steam Token in Meteor.settings');
+    }
+}
+
+function returnResponse(response) {
+    if (response.statusCode === 200) {
+        return response.data.result
     }
     else {
-        throw new Meteor.Error(500, "getMatch failed with error: "+matchResponse.statusCode);
+        throw new Meteor.Error(500, "GetMatchDetails failed with error: "+response.statusCode);
     }
 }

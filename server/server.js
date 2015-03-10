@@ -1,7 +1,7 @@
 // Calling the package method
 
 Meteor.methods({
-    'getMatch': function(){
-        return Dota.getMatch();
-    }
+    'GetMatchDetails': function(){
+        return Dota.GetMatchDetails();
+    },
 })

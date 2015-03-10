@@ -1,4 +1,4 @@
-Meteor.call('getMatch', function(error, result){
+Meteor.call('GetMatchDetails', function(error, result){
     var duration = numeral(result.duration).format('00:00:00');
     Session.set('duration', duration);
 
