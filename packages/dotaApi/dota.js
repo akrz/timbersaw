@@ -21,9 +21,3 @@ Dota.getMatch = function() {
         throw new Meteor.Error(500, "getMatch failed with error: "+matchResponse.statusCode);
     }
 }
-
-Meteor.methods({
-    'getMatch': function(){
-        return Dota.getMatch();
-    }
-})
